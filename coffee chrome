@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="description" content="Coffee Chrome">
+		<meta name="Keywords" content="overlay notification widget">
+		<meta name="author" content="The Breakfast Club">
+		<link rel="stylesheet" type="text/css" href="screen.css">
+	</head>
+	<body>
+		<main>
+			<div>
+				<input type="image" id="icon" src="http://images.clipartpanda.com/coffee-clip-art-9TR5gzyTe.png" />
+			</div>
+			<div>
+				<input type="image" id="gmail" src="gmail.png" />
+			</div>
+			<div>
+				<input type="image" id="messenger" src="messenger.ico" />
+			</div>
+			<div>
+				<input type="image" id="calendar" src="calendar.jpg" />
+			</div>
+			<div>
+				<input type="image" id="drive" src="drive.png" />
+			</div>
+			<div id='widget'>
+			</div>
+		</main>
+	</body>
+</html>

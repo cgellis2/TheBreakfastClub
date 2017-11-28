@@ -8,3 +8,48 @@
   bottom: 10px;
   right: 10px;
 }
+
+#gmail {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 105px;
+  right: 10px;
+}
+
+#messenger {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 97px;
+  right: 67px;
+}
+
+#calendar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 57px;
+  right: 110px;
+}
+
+#drive {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 0px;
+  right: 110px;
+}
+
+#widget {
+  width: 300px;
+  height: 200px;
+  border: 1px solid;
+  position: absolute;
+  bottom: 160px;
+  right: 10px;
+}

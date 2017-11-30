@@ -1,29 +1,33 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		<script
+src="https://code.jquery.com/jquery-3.2.1.js"
+integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+crossorigin="anonymous"></script>
 		<meta name="description" content="Coffee Chrome">
 		<meta name="Keywords" content="overlay notification widget">
 		<meta name="author" content="The Breakfast Club">
         <!--Bootstrap-->
-        
+
         <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-        
+
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
         <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-        
+
         <!--Ours-->
         <link rel="stylesheet" type="text/css" href="screen.css">
 
 
 	</head>
-    
+
 	<body>
 
             <input type="image" id="icon" src="http://images.clipartpanda.com/coffee-clip-art-9TR5gzyTe.png" />
-            <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#settings">Settings</button>
-    
+            <button type="button" id="butt" class="btn btn-success btn-sm" data-toggle="modal" data-target="#settings">Settings <i class="fa fa-cogs" aria-hidden="true"></i></button>
+
         <!--- Add & change apps -->
         <div class="modal fade" id="settings" tabindex="-1" role="dialog" aria-labelledby="settingsLabel" aria-hidden="true">
             <div class="modal-dialog">
@@ -31,15 +35,15 @@
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                         <h3 class="modal-title" id="settings">Customize Your Layout</h3>
-                  
-                        
+
+
                     </div>
-                 
+
                         <div class="modal-body">
                             <div class="container col-md-12">
                                 <div class="row">
                                     <div class = "col-md-10">
-                                    <h4>Currently Displaying</h4> 
+                                    <h4>Currently Displaying</h4>
                                     </div>
                                     <div class = "col-md-2">
                                         <h6>EDIT <i class="fa fa-pencil" font-size="15px" aria-hidden="true"></i></h6>
@@ -72,13 +76,13 @@
                                      </div>
                                 <div class="row">
                                     <div class = "col-md-10">
-                                    <h4>Available Apps</h4> 
+                                    <h4>Available Apps</h4>
                                         <br>
                                     </div>
                                     <br>
                                 </div>
                                 <!--Available Apps-->
-                                
+
                                 <div class="row">
                                         <!--Slack-->
                                         <div class="col-md-3">
@@ -106,18 +110,87 @@
                                     <br>
                                 </div>
                             </div>
-                  
+
                     <div class="modal-footer">
-                        
+
                         <!-- should we have a cancel button here? <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>  -->
                         <button type="button" data-dismiss="modal" class="btn btn-primary">Save Changes</button>
                     </div>
                 </div>
             </div>
         </div>
-	
-       
-            
+				<main>
+					<div>
+						<input type="image" id="icon" onclick="createIcons()" src="http://images.clipartpanda.com/coffee-clip-art-9TR5gzyTe.png" value=0 />
+					</div>
+					<div id="gmailHere">
+					</div>
+					<div id="messengerHere">
+					</div>
+					<div id="calendarHere">
+					</div>
+					<div id="driveHere">
+					</div>
+					<div id="widget">
+					</div>
+
+
+				</main>
+
+				<script type="text/javascript">
+					function createIcons() {
+						if(document.getElementById("icon").value == 0 ) {
+							var img1 = document.createElement("INPUT");
+							img1.setAttribute("type", "image");
+							img1.src = "gmail.png";
+							img1.setAttribute("id", "gmail");
+							img1.setAttribute("value", 0);
+							//img1.setAttribute("onclick", "createGmail()");
+							document.getElementById("gmailHere").appendChild(img1);
+
+							var img2 = document.createElement("INPUT");
+							img2.setAttribute("type", "image");
+							img2.src = "messenger.ico";
+							img2.setAttribute("id", "messenger");
+							img2.setAttribute("value", 0);
+							img2.setAttribute("onclick", "createMessenger()");
+							document.getElementById("messengerHere").appendChild(img2);
+
+							var img3 = document.createElement("INPUT");
+							img3.setAttribute("type", "image");
+							img3.src = "calendar.jpg";
+							img3.setAttribute("id", "calendar");
+							img3.setAttribute("value", 0);
+							img3.setAttribute("onclick", "createCalendar()");
+							document.getElementById("calendarHere").appendChild(img3);
+
+							var img4 = document.createElement("INPUT");
+							img4.setAttribute("type", "image");
+							img4.src = "drive.png";
+							img4.setAttribute("id", "drive");
+							img4.setAttribute("value", 0);
+							img4.setAttribute("onclick", "createDrive()");
+							document.getElementById("driveHere").appendChild(img4);
+
+							document.getElementById("icon").setAttribute("value", 1);
+						} else {
+							document.getElementById("gmailHere").removeChild(document.getElementById("gmail"));
+							document.getElementById("messengerHere").removeChild(document.getElementById("messenger"));
+							document.getElementById("calendarHere").removeChild(document.getElementById("calendar"));
+							document.getElementById("driveHere").removeChild(document.getElementById("drive"));
+
+							document.getElementById("icon").setAttribute("value", 0);
+						}
+					}
+
+					function createGmail() {
+						if(document.getElementById("gmail").value == 0) {
+							var gmailWidget = document.createElement
+						}
+					}
+				</script>
+
+
 
     </body>
 </html>

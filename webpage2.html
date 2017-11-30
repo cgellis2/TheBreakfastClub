@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="description" content="Coffee Chrome">
+		<meta name="Keywords" content="overlay notification widget">
+		<meta name="author" content="The Breakfast Club">
+		<link rel="stylesheet" type="text/css" href="screen.css">
+	</head>
+	<body>
+
+		<main>
+			<div>
+				<input type="image" id="icon" onclick="createIcons()" src="http://images.clipartpanda.com/coffee-clip-art-9TR5gzyTe.png" value=0 />
+			</div>
+			<div id="gmailHere">
+			</div>
+			<div id="messengerHere">
+			</div>
+			<div id="calendarHere">
+			</div>
+			<div id="driveHere">
+			</div>
+			<div id="widget">
+			</div>
+
+
+		</main>
+		<script type="text/javascript">
+			function createIcons() {
+				if(document.getElementById("icon").value == 0 ) {
+					var img1 = document.createElement("INPUT");
+					img1.setAttribute("type", "image");
+					img1.src = "gmail.png";
+					img1.setAttribute("id", "gmail");
+					img1.setAttribute("value", 0);
+					//img1.setAttribute("onclick", "createGmail()");
+					document.getElementById("gmailHere").appendChild(img1);
+
+					var img2 = document.createElement("INPUT");
+					img2.setAttribute("type", "image");
+					img2.src = "messenger.ico";
+					img2.setAttribute("id", "messenger");
+					img2.setAttribute("value", 0);
+					img2.setAttribute("onclick", "createMessenger()");
+					document.getElementById("messengerHere").appendChild(img2);
+
+					var img3 = document.createElement("INPUT");
+					img3.setAttribute("type", "image");
+					img3.src = "calendar.jpg";
+					img3.setAttribute("id", "calendar");
+					img3.setAttribute("value", 0);
+					img3.setAttribute("onclick", "createCalendar()");
+					document.getElementById("calendarHere").appendChild(img3);
+
+					var img4 = document.createElement("INPUT");
+					img4.setAttribute("type", "image");
+					img4.src = "drive.png";
+					img4.setAttribute("id", "drive");
+					img4.setAttribute("value", 0);
+					img4.setAttribute("onclick", "createDrive()");
+					document.getElementById("driveHere").appendChild(img4);
+
+					document.getElementById("icon").setAttribute("value", 1);
+				} else {
+					document.getElementById("gmailHere").removeChild(document.getElementById("gmail"));
+					document.getElementById("messengerHere").removeChild(document.getElementById("messenger"));
+					document.getElementById("calendarHere").removeChild(document.getElementById("calendar"));
+					document.getElementById("driveHere").removeChild(document.getElementById("drive"));
+
+					document.getElementById("icon").setAttribute("value", 0);
+				}
+			}
+
+			function createGmail() {
+				if(document.getElementById("gmail").value == 0) {
+					var gmailWidget = document.createElement
+				}
+			}
+		</script>
+	</body>
+</html>

@@ -24,7 +24,37 @@ crossorigin="anonymous"></script>
 	</head>
 
 	<body>
+        <main>
+        
+        <!-- draggable gmail-->
+        
+        <script>
+        window.onload = addListeners;
 
+    function addListeners(){
+    document.getElementById('api').addEventListener('mousedown', mouseDown, false);
+    window.addEventListener('mouseup', mouseUp, false);
+}
+
+function mouseUp()
+{
+    window.removeEventListener('mousemove', divMove, true);
+}
+
+function mouseDown(e){
+  window.addEventListener('mousemove', divMove, true);
+}
+
+function divMove(e){
+    var div = document.getElementById('api');
+  div.style.position = 'absolute';
+  div.style.top = e.clientY + 'px';
+  div.style.left = e.clientX + 'px';
+}
+        </script>
+        
+        
+        
             <input type="image" id="icon" src="http://images.clipartpanda.com/coffee-clip-art-9TR5gzyTe.png" />
             <button type="button" id="butt" class="btn btn-success btn-sm" data-toggle="modal" data-target="#settings">Settings <i class="fa fa-cogs" aria-hidden="true"></i></button>
 
@@ -119,7 +149,7 @@ crossorigin="anonymous"></script>
                 </div>
             </div>
         </div>
-				<main>
+				
 					<div>
 						<input type="image" id="icon" onclick="createIcons()" src="http://images.clipartpanda.com/coffee-clip-art-9TR5gzyTe.png" value=0 />
 					</div>
@@ -149,8 +179,8 @@ crossorigin="anonymous"></script>
                             document.getElementById("gmail").src == "mail.png";
                         }
                     }
-
-
+                  
+                    
 					function createIcons() {
 						if(document.getElementById("icon").value == 0 ) {
 							var img1 = document.createElement("INPUT");
@@ -160,8 +190,8 @@ crossorigin="anonymous"></script>
 							img1.setAttribute("value", 0);
 							img1.setAttribute("onclick", "changeImage()");
 							document.getElementById("gmailHere").appendChild(img1);
-
-
+                        
+                           
 
 							var img2 = document.createElement("INPUT");
 							img2.setAttribute("type", "image");
@@ -197,19 +227,19 @@ crossorigin="anonymous"></script>
 							document.getElementById("icon").setAttribute("value", 0);
 						}
 					}
-
+                      
 
 				</script>
                 <script>
                     function closeGmail(){
-                        document.getElementById('api').style.cssText = "visibility: hidden";
+                            document.getElementById('api').style.cssText = "visibility:hidden";
                     }
         </script>
             <script>
                     function openGmail(){
-
+                        
                             document.getElementById('api').style.cssText = "visibility:visible";
-
+                        
                     }
         </script>
 
@@ -217,166 +247,77 @@ crossorigin="anonymous"></script>
 					<div class="container">
 
 						<div class="title">
-							<p>Gmail</p>
-							<i id="window" class="fa fa-times" aria-hidden="true" onClick="closeGmail()";></i>
+							<p>&nbsp; Gmail</p>
+                            <i id="window" class="fa fa-times" aria-hidden="true" onClick="closeGmail()"></i>
 							<a href="https://mail.google.com/mail/u/0/#inbox" target="_blank">
-									<i id="expand" class="fa fa-arrow-up" aria-hidden="true"></i>
+									<img id="expand" src="expand.png">
 							</a>
 						</div>
+                      
+			      <table class="table" width="100%">
+			        <table class="table table-condensed" style="border-collapse:collapse;">
+                <thead>
+                    <tr>
+                        <th>Sender</th>
+                        <th>Subject</th>
+                        <th>Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr data-toggle="collapse" data-target="#demo1" class="accordion-toggle">
 
-			      <button id="authorize-button" class="btn btn-primary hidden">Authorize</button>
+                        
+                  
+                        <td>IBC SOT</td>
+                        <td> End of Year Gi...</td>
+                        <td>7:53 AM</td>
+                    </tr>
+                    <tr >
+                        <td colspan="6" class="hiddenRow"><div class="accordian-body collapse" id="demo1">
+                            T-shirt Pick-up
+                            <br>
+                            <br>
+Make sure to come in this week from Monday to Friday 9am - 5pm to pick up your end of the semester gift and IBC T-shirt! The end of the semester gifts will be given out on a first come first serve basis due to limited quantity. However, if you are unable to pick-up your gift this semester due to these constraints, we will have gifts ready for you to pick-up at the beginning of the Spring semester!
+                            </div> </td>
+                    </tr>
+                    <tr data-toggle="collapse" data-target="#demo2" class="accordion-toggle">
 
-			      <table class="table table-striped table-inbox hidden">
-			        <thead>
-			          <tr>
-			            <th>From</th>
-			            <th>Subject</th>
-			            <th>Date/Time</th>
-			          </tr>
-			        </thead>
-			        <tbody></tbody>
+                        <td>Avery Davis</td>
+                        <td>CS 465 Group Proj...</td>
+                        <td>6:59 AM</td>
+                    </tr>
+                    <tr>
+                        <td colspan="6" class="hiddenRow"><div id="demo2" class="accordian-body collapse">Let's meet in the UGL at 7PM.</div></td>
+                    </tr>
+                    <tr data-toggle="collapse" data-target="#demo3" class="accordion-toggle">
+
+                        <td>ufscomail</td>
+                        <td>Check Your University....</td>
+                        <td>6:23 AM</td>
+                    </tr>
+                    <tr>
+                        <td colspan="6"  class="hiddenRow"><div id="demo3" class="accordian-body collapse">
+                            This is your monthly reminder to check your University of Illinois student account for recent activity and
+any balance due.  Recent activity includes payments, credits and/or charges.  Payment is due on the 28th of
+this month for any amount owed and late fees will be assessed monthly to any amount due that is not paid.
+                            </div></td>
+                    </tr>
+               
+                </tbody>
+            </table>
 			      </table>
-			    </div>
-
-			    <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
-			    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-
-			    <script type="text/javascript">
-			      var clientId = '836383984072-r33a54edonveag46qi5i388j1nqst4l7.apps.googleusercontent.com';
-			      var apiKey = 'AIzaSyAtDG1n2Nb2wy5kyRcQjMmuJbu7K0Xa7AA';
-			      var scopes = 'https://www.googleapis.com/auth/gmail.readonly';
-			      function handleClientLoad() {
-			        gapi.client.setApiKey(apiKey);
-			        window.setTimeout(checkAuth, 1);
-			      }
-			      function checkAuth() {
-			        gapi.auth.authorize({
-			          client_id: clientId,
-			          scope: scopes,
-			          immediate: true
-			        }, handleAuthResult);
-			      }
-			      function handleAuthClick() {
-			        gapi.auth.authorize({
-			          client_id: clientId,
-			          scope: scopes,
-			          immediate: false
-			        }, handleAuthResult);
-			        return false;
-			      }
-			      function handleAuthResult(authResult) {
-			        if(authResult && !authResult.error) {
-			          loadGmailApi();
-			          $('#authorize-button').remove();
-			          $('.table-inbox').removeClass("hidden");
-			        } else {
-			          $('#authorize-button').removeClass("hidden");
-			          $('#authorize-button').on('click', function(){
-			            handleAuthClick();
-			          });
-			        }
-			      }
-			      function loadGmailApi() {
-			        gapi.client.load('gmail', 'v1', displayInbox);
-			      }
-			      function displayInbox() {
-			        var request = gapi.client.gmail.users.messages.list({
-			          'userId': 'me',
-			          'labelIds': 'INBOX',
-			          'maxResults': 10
-			        });
-			        request.execute(function(response) {
-			          $.each(response.messages, function() {
-			            var messageRequest = gapi.client.gmail.users.messages.get({
-			              'userId': 'me',
-			              'id': this.id
-			            });
-			            messageRequest.execute(appendMessageRow);
-			          });
-			        });
-			      }
-			      function appendMessageRow(message) {
-			        $('.table-inbox tbody').append(
-			          '<tr>\
-			            <td>'+getHeader(message.payload.headers, 'From')+'</td>\
-			            <td>\
-			              <a href="#message-modal-' + message.id +
-			                '" data-toggle="modal" id="message-link-' + message.id+'">' +
-			                getHeader(message.payload.headers, 'Subject') +
-			              '</a>\
-			            </td>\
-			            <td>'+getHeader(message.payload.headers, 'Date')+'</td>\
-			          </tr>'
-			        );
-			        $('body').append(
-			          '<div class="modal fade" id="message-modal-' + message.id +
-			              '" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">\
-			            <div class="modal-dialog modal-lg">\
-			              <div class="modal-content">\
-			                <div class="modal-header">\
-			                  <button type="button"\
-			                          class="close"\
-			                          data-dismiss="modal"\
-			                          aria-label="Close">\
-			                    <span aria-hidden="true">&times;</span></button>\
-			                  <h4 class="modal-title" id="myModalLabel">' +
-			                    getHeader(message.payload.headers, 'Subject') +
-			                  '</h4>\
-			                </div>\
-			                <div class="modal-body">\
-			                  <iframe id="message-iframe-'+message.id+'" srcdoc="<p>Loading...</p>">\
-			                  </iframe>\
-			                </div>\
-			              </div>\
-			            </div>\
-			          </div>'
-			        );
-			        $('#message-link-'+message.id).on('click', function(){
-			          var ifrm = $('#message-iframe-'+message.id)[0].contentWindow.document;
-			          $('body', ifrm).html(getBody(message.payload));
-			        });
-			      }
-			      function getHeader(headers, index) {
-			        var header = '';
-			        $.each(headers, function(){
-			          if(this.name === index){
-			            header = this.value;
-			          }
-			        });
-			        return header;
-			      }
-			      function getBody(message) {
-			        var encodedBody = '';
-			        if(typeof message.parts === 'undefined')
-			        {
-			          encodedBody = message.body.data;
-			        }
-			        else
-			        {
-			          encodedBody = getHTMLPart(message.parts);
-			        }
-			        encodedBody = encodedBody.replace(/-/g, '+').replace(/_/g, '/').replace(/\s/g, '');
-			        return decodeURIComponent(escape(window.atob(encodedBody)));
-			      }
-			      function getHTMLPart(arr) {
-			        for(var x = 0; x <= arr.length; x++)
-			        {
-			          if(typeof arr[x].parts === 'undefined')
-			          {
-			            if(arr[x].mimeType === 'text/html')
-			            {
-			              return arr[x].body.data;
-			            }
-			          }
-			          else
-			          {
-			            return getHTMLPart(arr[x].parts);
-			          }
-			        }
-			        return '';
-			      }
-			    </script>
-			    <script src="https://apis.google.com/js/client.js?onload=handleClientLoad"></script>
-				</div>
+                        </div>
+                    </div>
+                <div id = "calendarBox">
+                    <div class="container">
+                        <div class="title two">
+							<p>&nbsp; Calendar</p>
+                            <i id="window" class="fa fa-times" aria-hidden="true" onClick="closeGmail()"></i>
+                            <a href="https://calendar.google.com/calendar/r?pli=1" target="_blank">
+									<img id="expand" src="expand.png">
+							</a>
+                        </div>
+                    </div>
+                </div>
     </body>
 </html>

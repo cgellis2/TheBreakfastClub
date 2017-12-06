@@ -149,8 +149,8 @@ crossorigin="anonymous"></script>
                             document.getElementById("gmail").src == "mail.png";
                         }
                     }
-                  
-                    
+
+
 					function createIcons() {
 						if(document.getElementById("icon").value == 0 ) {
 							var img1 = document.createElement("INPUT");
@@ -160,8 +160,8 @@ crossorigin="anonymous"></script>
 							img1.setAttribute("value", 0);
 							img1.setAttribute("onclick", "changeImage()");
 							document.getElementById("gmailHere").appendChild(img1);
-                        
-                           
+
+
 
 							var img2 = document.createElement("INPUT");
 							img2.setAttribute("type", "image");
@@ -197,7 +197,7 @@ crossorigin="anonymous"></script>
 							document.getElementById("icon").setAttribute("value", 0);
 						}
 					}
-                      
+
 
 				</script>
                 <script>
@@ -207,9 +207,9 @@ crossorigin="anonymous"></script>
         </script>
             <script>
                     function openGmail(){
-                        
+
                             document.getElementById('api').style.cssText = "visibility:visible";
-                        
+
                     }
         </script>
 
@@ -217,10 +217,10 @@ crossorigin="anonymous"></script>
 					<div class="container">
 
 						<div class="title">
-							<p>&nbsp; Gmail</p>
-							<img id="window" src="windowclose.png" onClick= "closeGmail()"; >
+							<p>Gmail</p>
+							<i id="window" class="fa fa-times" aria-hidden="true" onClick="closeGmail()";></i>
 							<a href="https://mail.google.com/mail/u/0/#inbox" target="_blank">
-									<img id="expand" src="expand.png">
+									<i id="expand" class="fa fa-arrow-up" aria-hidden="true"></i>
 							</a>
 						</div>
 

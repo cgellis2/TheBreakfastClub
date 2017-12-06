@@ -57,6 +57,12 @@
   position: absolute;
   bottom: 140px;
   right: 60px;
+    visibility: hidden;
+
+
+}
+.myClass{
+    visibility: hidden;
 }
 
 .container{
@@ -81,16 +87,18 @@
 }
 
 #expand {
-  color: white;
-  width: 10px;
-  height: 10px;
+  width: 15px;
+  height: 15px;
   position: absolute;
-  right: -5px;
-  top: 4px;
+  right: -20px;
+  top: 7px;
 }
 
 .fa-pencil{
     font-size:15px;
+}
+.fa:active{
+ color: red;
 }
 
 .fa-envelope{

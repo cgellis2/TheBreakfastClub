@@ -39,6 +39,22 @@ div8.id = "api";
 div8.style.display = "none"
 document.body.appendChild(div8);
 	
+var div9  = document.createElement ('I');
+div9.id = "window";
+div9.className = "fa fa-times";
+div9.setAttribute("aria-hidden", "true");
+div9.style.display = "none";
+document.body.appendChild(div9);
+
+var div10  = document.createElement ('I');
+div10.id = "expand";
+div10.className = "fa fa-times";
+div10.setAttribute("aria-hidden", "true");
+div10.style.display = "none";
+document.body.appendChild(div10);
+
+
+
 document.getElementById('icon').addEventListener('click', function() {
 	if (div3.style.display == "none") {
 		div3.style.display = "block";
@@ -56,7 +72,29 @@ document.getElementById('icon').addEventListener('click', function() {
 document.getElementById('gmail').addEventListener('click', function() {
 	if(div8.style.display == "none") {
 		div8.style.display = "block";
+		div9.style.display = "block";
+		div10.style.display = "block";
 	} else {
 		div8.style.display = "none";
+		div9.style.display = "none";
+		div10.style.display = "none";
+	}
+});
+document.getElementById('window').addEventListener('click', function() {
+	if(div8.style.display == "none") {
+		div8.style.display = "block";
+		div9.style.display = "block";
+		div10.style.display = "block";
+	} else {
+		div8.style.display = "none";
+		div9.style.display = "none";
+		div10.style.display = "none";
+	}
+});
+
+document.getElementById('expand').addEventListener('click', function() {
+	if(div10.style.display == "block") {
+		//chrome.tabs.create({url: 'https://mail.google.com/mail/u/0/#inbox'})
+		window.open('https://mail.google.com/mail/u/0/#inbox','_blank');
 	}
 });

@@ -66,3 +66,21 @@ right: 65px;
   bottom: 120px;
   right: 30px;
 }
+
+#window{
+  width: 20px;
+  height: 20px;
+  position: fixed;
+  right: 40px;
+	z-index: 3;
+  bottom: 390px;
+}
+
+#expand {
+  width: 15px;
+  height: 15px;
+  position: fixed;
+	z-index: 3;
+  right: 55px;
+  bottom: 395px;
+}

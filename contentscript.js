@@ -32,6 +32,12 @@ div6.id = "drive";
 div6.src = 'https://www.shareicon.net/data/128x128/2017/06/05/886691_media_512x512.png';
 div6.style.display = "none";
 document.body.appendChild(div6);
+
+var div8  = document.createElement ('img');
+div8.src  = 'https://preview.ibb.co/nuzNVG/api.png'
+div8.id = "api";
+div8.style.display = "none"
+document.body.appendChild(div8);
 	
 document.getElementById('icon').addEventListener('click', function() {
 	if (div3.style.display == "none") {
@@ -48,5 +54,9 @@ document.getElementById('icon').addEventListener('click', function() {
 });
 
 document.getElementById('gmail').addEventListener('click', function() {
-	
+	if(div8.style.display == "none") {
+		div8.style.display = "block";
+	} else {
+		div8.style.display = "none";
+	}
 });
